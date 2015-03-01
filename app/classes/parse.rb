@@ -4,36 +4,28 @@ require 'open-uri'
 # This class parses the html from the input url
 class Parse
 
-    def initialize
-        @content = Hash.new
+    def site_content(url)
+        Nokogiri::HTML(open("http://www.urbanspoon.com" + url));
     end
 
-    def url
-        'http://www.urbanspoon.com/r/71/1907309/restaurant/Melbourne/Cookhouse-Gourmet-Burger-and-Chicken-Bar-Pascoe-Vale'
-    end
-
-    def site_content
-        Nokogiri::HTML(open(url));
-    end
-
-    def restaurant_name
+    def restaurant_name(url)
         # Restaurant name is the only h1 on the page :)
-        site_content.css('h1 a').each do |name|
+        site_content(url).css('h1 a').each do |name|
             @content[:name] = name.content
         end
     end
 
-    def address
+    def address(url)
         # Need to concatinate street and locality
         full_address = ''
 
         # Get street address
-        site_content.css('span.street-address').each do |street_address|
+        site_content(url).css('span.street-address').each do |street_address|
             full_address << street_address.text.strip
         end
 
         # Get locality
-        site_content.css('span.locality').each do |locality|
+        site_content(url).css('span.locality').each do |locality|
             full_address << " " + locality.text.strip
             full_address = full_address.split(',')[0]
         end
@@ -42,18 +34,29 @@ class Parse
         @content[:address] = full_address
     end
 
-    def hours
+    def hours(url)
         open_hours = ""
-        site_content.css('div#hours-base').each do |hours|
+        site_content(url).css('div#hours-base').each do |hours|
             open_hours << hours.children.text.gsub("\n", " ").gsub("Hours", "").strip
         end
-        @content[:hours] = open_hours
+        @content[:open_hours] = open_hours
     end
 
-    def do_all
-        self.restaurant_name
-        self.address
-        self.hours
+    def get_list
+        list = []
+        url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=3"
+        site = Nokogiri::HTML(open(url))
+        site.css('a.resto_name').each do |restaurant|
+            list.push(restaurant.attributes['href'].value)
+        end
+        list
+    end
+
+    def get_details(url)
+        @content = Hash.new
+        self.restaurant_name(url)
+        self.address(url)
+        self.hours(url)
         @content
     end
 

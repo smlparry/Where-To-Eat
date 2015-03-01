@@ -1,0 +1,2 @@
+module InsertMenuHelper
+end
