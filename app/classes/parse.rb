@@ -9,7 +9,7 @@ class Parse
     end
 
     def url
-        'http://www.urbanspoon.com/r/71/1584177/restaurant/CBD/Manchester-Press-Melbourne'
+        'http://www.urbanspoon.com/r/71/1907309/restaurant/Melbourne/Cookhouse-Gourmet-Burger-and-Chicken-Bar-Pascoe-Vale'
     end
 
     def site_content
