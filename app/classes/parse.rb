@@ -42,9 +42,18 @@ class Parse
         @content[:address] = full_address
     end
 
+    def hours
+        open_hours = ""
+        site_content.css('div#hours-base').each do |hours|
+            open_hours << hours.children.text.gsub("\n", " ").gsub("Hours", "").strip
+        end
+        @content[:hours] = open_hours
+    end
+
     def do_all
         self.restaurant_name
         self.address
+        self.hours
         @content
     end
 
