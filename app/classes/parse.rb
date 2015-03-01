@@ -44,7 +44,7 @@ class Parse
 
     def get_list
         list = []
-        url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=3"
+        url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=11"
         site = Nokogiri::HTML(open(url))
         site.css('a.resto_name').each do |restaurant|
             list.push(restaurant.attributes['href'].value)

@@ -1,2 +1,16 @@
-<h1>InsertMenu#items</h1>
-<p>Find me in app/views/insert_menu/items.html.erb</p>
+<h1>Insert Menu Items</h1>
+<%= form_tag('items') do %>
+    <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :name, @restaurant_default)) %>
+    <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :category, @category_default)) %>
+    <div style="display:block;">
+        <%= label_tag(:item) %>
+        <%= text_field_tag(:item) %>
+    </div>
+    <div style="display:block;">
+        <%= label_tag(:price) %>
+        <%= number_field_tag(:price) %>
+    </div>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<%= link_to('Insert menu category', 'category') %>

@@ -1,2 +1,8 @@
-<h1>InsertMenu#category</h1>
-<p>Find me in app/views/insert_menu/category.html.erb</p>
+<h1>Insert Category</h1>
+<%= form_tag('category') do %>
+    <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :name, @default)) %>
+    <%= text_field_tag(:category) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<%= link_to('Insert menu items', 'items') %>
