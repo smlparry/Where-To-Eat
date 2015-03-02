@@ -27,4 +27,10 @@ class Restaurant < ActiveRecord::Base
             Restaurant.create(name: restaurant_details[:name], address: restaurant_details[:address], open_hours: restaurant_details[:open_hours], rating: restaurant_details[:rating], uri: restaurant_details[:uri])
         end
     end
+
+    # Updates all the urban spoon ratings
+    def update_ratings
+        uris = Restaurant.pluck(:uri)
+        uris;
+    end
 end
