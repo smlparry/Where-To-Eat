@@ -42,9 +42,15 @@ class Parse
         @content[:open_hours] = open_hours
     end
 
-    def get_list
+    def rating(url)
+        site_content(url).css('div.rating').each do |rating|
+            @content[:rating] = rating.text.to_f
+        end
+    end
+
+    def get_list(page = 1)
         list = []
-        url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=11"
+        url = "/pr/71/1/Melbourne/Cheap-Eats.html?page=" + page
         site = Nokogiri::HTML(open(url))
         site.css('a.resto_name').each do |restaurant|
             list.push(restaurant.attributes['href'].value)
@@ -57,6 +63,7 @@ class Parse
         self.restaurant_name(url)
         self.address(url)
         self.hours(url)
+        self.rating(url)
         @content
     end
 
