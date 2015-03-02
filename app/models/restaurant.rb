@@ -50,4 +50,9 @@ class Restaurant < ActiveRecord::Base
             Restaurant.where({id: restaurant.id}).update_all({longitude: long_lat[:longitude], latitude: long_lat[:latitude]})
         end
     end
+
+    def self.insert_long_lat(restaurant_id, long_lat)
+        Restaurant.where(id: restaurant_id).update_all({ longitude: long_lat[:longitude], latitude: long_lat[:latitude] })
+    end
+
 end
