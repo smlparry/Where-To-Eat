@@ -72,5 +72,11 @@ class Parse
         @content
     end
 
+    def get_ratings(url)
+        @content = Hash.new
+            self.rating(url)
+        @content
+    end
+
 
 end

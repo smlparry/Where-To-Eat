@@ -31,6 +31,13 @@ class Restaurant < ActiveRecord::Base
     # Updates all the urban spoon ratings
     def update_ratings
         uris = Restaurant.pluck(:uri)
-        uris;
+        parse = Parse.new
+        @new_ratings = {}
+        uris.each do |uri|
+            @new_ratings[uri] = parse.get_ratings(uri)
+        end
+        @new_ratings.each do |rating|
+            Restaurant.where({uri: rating[0]}).update_all({rating: rating[1][:rating]})
+        end
     end
 end
