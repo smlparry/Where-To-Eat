@@ -2,7 +2,9 @@ require 'server-side-google-maps'
 
 class Location
     def self.distance
-        route = ServerSideGoogleMaps::Route.new(['8 Rankins Lane Melbourne', '4 Rankins Lane Melbourne'])
-        p route.distance*0.001
+        (0..10).each do |i|
+            route = ServerSideGoogleMaps::Route.new([[ 45.4119000, -75.6984600 ], [45.4119000, -75.6984600 ]])
+            p route.distance*0.001
+        end
     end
 end
