@@ -1,3 +1,4 @@
+
 class Restaurant < ActiveRecord::Base
 
     def fill_table
@@ -38,6 +39,15 @@ class Restaurant < ActiveRecord::Base
         end
         @new_ratings.each do |rating|
             Restaurant.where({uri: rating[0]}).update_all({rating: rating[1][:rating]})
+        end
+    end
+
+    def self.update_location
+        to_update = Restaurant.where({id: 1})
+        # to_update = Restaurant.where(longitude: [false, nil])
+        to_update.each do |restaurant|
+            long_lat = Location.get_location(restaurant.address)
+            Restaurant.where({id: restaurant.id}).update_all({longitude: long_lat[:longitude], latitude: long_lat[:latitude]})
         end
     end
 end
