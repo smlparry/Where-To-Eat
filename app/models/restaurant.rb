@@ -1,6 +1,9 @@
 
 class Restaurant < ActiveRecord::Base
 
+    has_many :category
+    has_many :item
+
     def fill_table
         parse = Parse.new
         (3..10).each do |page|

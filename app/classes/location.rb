@@ -3,7 +3,7 @@ require 'geo-distance'
 
 class Location
     def get_location
-        [-37.7985396,144.9597427]
+        [-37.8053885,144.9556878]
     end
 
     def get_route(current_location, address)
@@ -42,15 +42,14 @@ class Location
         end
     end
 
-    def distance(longitude, latitude)
-        long_lat = self.get_location
-        lon1 = long_lat[0]
-        lat1 = long_lat[1]
+    def distance(latitude, longitude)
+        lat1 = -37.8053885
+        lon1 = 144.9556878
 
-        lon2 = longitude
         lat2 = latitude
+        lon2 = longitude
 
         dist = GeoDistance.distance( lat1, lon1, lat2, lon2 )
-        dist.meters.distance*0.001
+        dist.meters.distance
     end
 end

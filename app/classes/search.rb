@@ -2,10 +2,11 @@ class Search
     def self.rank
         location = Location.new
         restaurants = Restaurant.all()
-        @distance_hash = Hash.new
+        @proximity = Hash.new
         restaurants.each do |restaurant|
-            @distance_hash[location.distance(location.get_location, restaurant.address)] = restaurant.name
+            @proximity[location.distance(restaurant.latitude, restaurant.longitude)] = restaurant.name
         end
-        @distance_hash
+
+        @proximity.sort
     end
 end
