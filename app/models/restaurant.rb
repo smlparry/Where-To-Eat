@@ -2,12 +2,14 @@ class Restaurant < ActiveRecord::Base
 
     def fill_table
         parse = Parse.new
-        list = parse.get_list
-        @restaurants = []
-        list.each do |url|
-            @restaurants.push(parse.get_details(url))
+        (3..10).each do |page|
+            list = parse.get_list(page)
+            @restaurants = []
+            list.each do |url|
+                @restaurants.push(parse.get_details(url))
+            end
+            self.insert(@restaurants)
         end
-        self.insert(@restaurants)
     end
 
     def details
