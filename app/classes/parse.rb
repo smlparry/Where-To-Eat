@@ -15,7 +15,6 @@ class Parse
         sorted = price_hash.sort
         len = sorted.length
         return (sorted[(len - 1) / 2][0] + sorted[len/2][0]) / 2.0
-
     end
 
     # The ranking algorithm
@@ -25,10 +24,15 @@ class Parse
     #   items = Number of items under the specified price range
     #   proximity = distance in meters from the source
     #   median = median price of all the items in the restaurant
-    #   (restaurant.rating*items.count)/(result[0]/median)
+    # Sorry if my math is shit!
+    # I'm sure this could be improved but for an MVP it should be enough
     def self.rank(rating, items, proximity, median)
         # Reduce the effectiveness of the no. of items
-        return (rating*items)/(proximity/median)
+        items_graded = items*0.5 + 0.5
+        # Reduce the effectiveness of the median price
+        median_graded = median*0.25
+        # Run the equation
+        return (rating*items_graded)/(proximity*median_graded)
     end
 
     def site_content(url)

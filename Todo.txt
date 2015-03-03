@@ -1,4 +1,4 @@
 1 / Add urbanspoon ratings to the restaurants for sorting
 2 / Add auto updater of the ubanspoon ratings
-3 - Geolocation and google maps api to sort by location
-4 - Reduce the effectiveness of the number of items within price range
+3 / Geolocation and google maps api to sort by location
+4 - Reduce the effectiveness of the number of items within price range and of the median menu price

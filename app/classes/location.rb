@@ -6,6 +6,10 @@ class Location
         [-37.8053885,144.9556878]
     end
 
+    def get_cbd_lat_long
+        [-37.81361110, 144.96305559]
+    end
+
     def get_route(current_location, address)
         ServerSideGoogleMaps::Route.new([current_location, address])
     end
@@ -43,8 +47,8 @@ class Location
     end
 
     def distance(latitude, longitude)
-        lat1 = -37.8091110
-        lon1 = 144.9635600
+        lat1 = -37.81361110
+        lon1 = 144.96305559
 
         lat2 = latitude
         lon2 = longitude
