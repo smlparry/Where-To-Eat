@@ -9,7 +9,7 @@ class Search
         @proximity.sort
     end
 
-    def self.rank(price, long_lat = [-37.8053885,144.9556878])
+    def self.rank(price, long_lat = [-37.81361110,144.96305559])
         location = Location.new
         # Find within price range
         items = Item.where("price < ?", price)
