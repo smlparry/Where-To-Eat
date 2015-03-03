@@ -83,7 +83,7 @@ class Parse
         @content[:uri] = url
     end
 
-    def get_list(page = 1)
+    def get_list(page)
         list = []
         url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=" + page.to_s
         site = Nokogiri::HTML(open(url))
