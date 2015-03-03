@@ -45,7 +45,7 @@ class Search
         end
         # Sort in reverse order cause best fit is largest number
         result = @final_results.sort.reverse!
-        result.take(20)
+        result.take(50)
     end
 
 end

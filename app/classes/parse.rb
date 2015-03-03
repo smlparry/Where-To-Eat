@@ -30,7 +30,7 @@ class Parse
         # Reduce the effectiveness of the no. of items
         items_graded = items*0.5 + 0.5
         # Reduce the effectiveness of the median price
-        median_graded = median*0.25
+        median_graded = median*0.15
         # Run the equation
         return (rating*items_graded)/(proximity*median_graded)
     end
