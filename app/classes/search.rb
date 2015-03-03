@@ -1,14 +1,4 @@
 class Search
-    def self.closest
-        location = Location.new
-        restaurants = Restaurant.all()
-        @proximity = Hash.new
-        restaurants.each do |restaurant|
-            @proximity[location.distance(restaurant.latitude, restaurant.longitude)] = restaurant.name
-        end
-        @proximity.sort
-    end
-
     def self.rank(price, long_lat = [-37.81361110,144.96305559])
         location = Location.new
         # Find within price range

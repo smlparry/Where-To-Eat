@@ -6,17 +6,24 @@ class Restaurant < ActiveRecord::Base
 
     def fill_table
         parse = Parse.new
-        (10..50).each do |page|
-            p "getting the list"
+        # 75 pages in this one
+        (1..75).each do |page|
+            p page
+            p "getting the list..."
             list = parse.get_list(page)
+            p "done"
             @restaurants = []
-            p "fetching restaurant details"
+            p "fetching restaurant details..."
             list.each do |url|
                 @restaurants.push(parse.get_details(url))
             end
+            p "done"
+            p "inserting records..."
             self.insert(@restaurants)
-            p "updating location"
+            p "done"
+            p "updating location..."
             self.update_location
+            p "done"
         end
     end
 
@@ -50,12 +57,13 @@ class Restaurant < ActiveRecord::Base
     end
 
     # This class updates all the locations for the restuarants in the database
-    def self.update_location
+    def update_location
         # Get all empty records
-        to_update = Restaurant.where(longitude: [false, nil])
+        to_update = Restaurant.where(longitude: [false, nil, 1.0])
         # Update each
         to_update.each do |restaurant|
-            long_lat = Location.get_location(restaurant.address)
+            restaurant.address
+            long_lat = Location.long_lat(restaurant.address)
             Restaurant.where({id: restaurant.id}).update_all({longitude: long_lat[:longitude], latitude: long_lat[:latitude]})
         end
     end

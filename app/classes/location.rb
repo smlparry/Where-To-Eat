@@ -10,7 +10,7 @@ class Location
         [-37.81361110, 144.96305559]
     end
 
-    def get_route(current_location, address)
+    def self.get_route(current_location, address)
         ServerSideGoogleMaps::Route.new([current_location, address])
     end
 
@@ -24,9 +24,9 @@ class Location
         distance
     end
 
-    def long_lat(current_location, address)
+    def self.long_lat(address)
         begin
-            route = self.get_route(current_location, address)
+            route = self.get_route([-37.81361110, 144.96305559], address)
             long_lat = Hash.new
             long_lat[:longitude] = route.destination_point.longitude
             long_lat[:latitude] = route.destination_point.latitude

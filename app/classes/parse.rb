@@ -57,8 +57,7 @@ class Parse
 
         # Get locality
         site_content(url).css('span.locality').each do |locality|
-            full_address << " " + locality.text.strip
-            full_address = full_address.split(',')[0]
+            full_address << " " + locality.text.strip.split(',')[0]
         end
 
         # Add full_address to the hash
@@ -85,7 +84,7 @@ class Parse
 
     def get_list(page)
         list = []
-        url = "http://www.urbanspoon.com/pr/71/1/Melbourne/Cheap-Eats.html?page=" + page.to_s
+        url = "http://www.urbanspoon.com/npr/71/7105/1/Melbourne/CBD/Cheap-Eats.html?last_filter=price_level&page=" + page.to_s
         site = Nokogiri::HTML(open(url))
         site.css('a.resto_name').each do |restaurant|
             list.push(restaurant.attributes['href'].value)
