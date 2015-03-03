@@ -9,7 +9,7 @@ class Search
         @proximity.sort
     end
 
-    def self.rank(price, location = [144.9556878,-37.8053885])
+    def self.rank(price, long_lat = [-37.8053885,144.9556878])
         location = Location.new
         # Find within price range
         items = Item.where("price < ?", price)
@@ -17,7 +17,7 @@ class Search
 
         # Get distance from starting point
         items.each do |item|
-            @results[location.distance(item.restaurant.latitude, item.restaurant.longitude)] = item.restaurant
+            @results[location.distance(long_lat[0], long_lat[1], item.restaurant.latitude, item.restaurant.longitude)] = item.restaurant
         end
 
         # Sort by proximity

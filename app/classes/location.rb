@@ -46,14 +46,8 @@ class Location
         end
     end
 
-    def distance(latitude, longitude)
-        lat1 = -37.81361110
-        lon1 = 144.96305559
-
-        lat2 = latitude
-        lon2 = longitude
-
-        dist = GeoDistance.distance( lat1, lon1, lat2, lon2 )
+    def distance(start_lat, start_lon, end_lat, end_lon)
+        dist = GeoDistance.distance( start_lat, start_lon, end_lat, end_lon )
         dist.meters.distance
     end
 end
