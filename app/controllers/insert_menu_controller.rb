@@ -15,7 +15,8 @@ class InsertMenuController < ApplicationController
     if ! params[:category_id].blank?
         @category_default = params[:category_id]
         @restaurant_default = params[:restaurant_id]
-        Item.create(restaurant_id: params[:restaurant_id], category_id: params[:category_id], item: params[:item], price: params[:price])
+        @inaccuracy = params[:inaccuracy]
+        Item.create(restaurant_id: params[:restaurant_id], category_id: params[:category_id], item: params[:item], price: params[:price], inaccuracy: params[:inaccuracy])
     else
         @category_default = 1
         @restaurant_default = 1

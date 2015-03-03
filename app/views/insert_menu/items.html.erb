@@ -10,6 +10,10 @@
         <%= label_tag(:price) %>
         <%= number_field_tag(:price) %>
     </div>
+    <div style="display:block;">
+        <%= label_tag(:inaccuracy) %>
+        <%= check_box_tag(:inaccuracy) %>
+    </div>
     <%= submit_tag("Submit") %>
 <% end %>
 

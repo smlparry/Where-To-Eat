@@ -25,13 +25,13 @@ class Patch
     end
 
     # find the closest x
-    def self.closest(amount = 100)
+    def self.to_do
             location = Location.new
             restaurants = Restaurant.all()
             @proximity = Hash.new
             restaurants.each do |restaurant|
                 @proximity[location.distance(-37.81361110, 144.96305559, restaurant.latitude, restaurant.longitude)] = restaurant.name
             end
-            @proximity.count
+            @proximity.sort
         end
 end
