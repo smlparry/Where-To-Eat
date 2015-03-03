@@ -43,8 +43,8 @@ class Location
     end
 
     def distance(latitude, longitude)
-        lat1 = -37.8053885
-        lon1 = 144.9556878
+        lat1 = -37.8091110
+        lon1 = 144.9635600
 
         lat2 = latitude
         lon2 = longitude

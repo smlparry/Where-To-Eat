@@ -4,6 +4,33 @@ require 'open-uri'
 # This class parses the html from the input url
 class Parse
 
+    # Finds the median price for set of data
+    # Primarily used for the search algorithm to find the median item price
+    def self.median_price(array)
+        price_hash = Hash.new
+        array.each do |item|
+            price_hash[item.price] = item
+        end
+
+        sorted = price_hash.sort
+        len = sorted.length
+        return (sorted[(len - 1) / 2][0] + sorted[len/2][0]) / 2.0
+
+    end
+
+    # The ranking algorithm
+    # Mainly referenced in the search class
+    # Takes 4 parameters
+    #   rating = Urban Spoon rating
+    #   items = Number of items under the specified price range
+    #   proximity = distance in meters from the source
+    #   median = median price of all the items in the restaurant
+    #   (restaurant.rating*items.count)/(result[0]/median)
+    def self.rank(rating, items, proximity, median)
+        # Reduce the effectiveness of the no. of items
+        return (rating*items)/(proximity/median)
+    end
+
     def site_content(url)
         Nokogiri::HTML(open("http://www.urbanspoon.com" + url));
     end
