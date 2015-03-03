@@ -6,13 +6,16 @@ class Restaurant < ActiveRecord::Base
 
     def fill_table
         parse = Parse.new
-        (10..100).each do |page|
+        (10..50).each do |page|
+            p "getting the list"
             list = parse.get_list(page)
             @restaurants = []
+            p "fetching restaurant details"
             list.each do |url|
                 @restaurants.push(parse.get_details(url))
             end
             self.insert(@restaurants)
+            p "updating location"
             self.update_location
         end
     end
