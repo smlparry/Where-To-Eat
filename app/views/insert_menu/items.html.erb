@@ -4,11 +4,11 @@
     <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :category, @category_default)) %>
     <div style="display:block;">
         <%= label_tag(:item) %>
-        <%= text_field_tag(:item) %>
+        <%= text_field_tag(:item, @item_default,  {style: "width:100%"}) %>
     </div>
     <div style="display:block;">
         <%= label_tag(:price) %>
-        <%= number_field_tag(:price) %>
+        <%= number_field_tag(:price, @price_default) %>
     </div>
     <div style="display:block;">
         <%= label_tag(:inaccuracy) %>
