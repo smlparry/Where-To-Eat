@@ -6,7 +6,7 @@ class ApiController < ApplicationController
     #   If the location was not specifed default to melborne CBD
     #   If this value is updated be sure to update the if block in Search.rank
       if location.blank?
-          location = [-37.81361110,144.96305559]
+              location = [-37.81361110,144.96305559]
       end
 
     #   Price in cents!
