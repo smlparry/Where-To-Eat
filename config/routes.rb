@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'api/rank'
+  post 'api/rank'
+
+  get 'api/test'
 
   get 'insert_menu/category'
 
