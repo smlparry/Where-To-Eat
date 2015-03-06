@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'api/rank'
+
   get 'insert_menu/category'
 
   get 'insert_menu/restaurant'
