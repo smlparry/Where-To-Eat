@@ -36,6 +36,7 @@ class Search
         # Sort in reverse order cause best fit is largest number
         result = @final_results.sort.reverse!
         result.take(50)
+
     end
 
 end
