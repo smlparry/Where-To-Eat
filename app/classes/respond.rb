@@ -1,6 +1,6 @@
 class Respond
     def self.no_input
-        { error: "You need to supply both your location and price range" }
+        { error: "You need to supply a price range" }
     end
 
     def self.no_results

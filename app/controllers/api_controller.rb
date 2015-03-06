@@ -3,7 +3,7 @@ class ApiController < ApplicationController
       location = [-37.81361110, 144.96305559]
       price = 1000
 
-      if price.blank? or location.blank?
+      if price.blank?
           respond_to do |format|
               format.json { render :json => Respond.no_input }
           end
