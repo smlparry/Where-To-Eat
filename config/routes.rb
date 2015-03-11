@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root 'api/test'
+    root 'api#test'
   post 'api/rank'
 
   get 'api/test'
