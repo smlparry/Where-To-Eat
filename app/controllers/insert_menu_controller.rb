@@ -32,6 +32,13 @@ class InsertMenuController < ApplicationController
   end
 
   def insert_database
+
+      # Delete everything
+      Restaurant.delete_all
+      Category.delete_all
+      Item.delete_all
+
+    # cast sql file to string
       sqlString = <<-EOS
       INSERT INTO "categories" VALUES (1, 1146, 'Gourmet Salads', '2015-03-03 13:20:03.862658', '2015-03-03 13:20:03.862658');
       INSERT INTO "categories" VALUES (2, 1146, 'Snack Rolls', '2015-03-03 13:20:10.031805', '2015-03-03 13:20:10.031805');
@@ -2040,6 +2047,7 @@ class InsertMenuController < ApplicationController
     #   Each sql query
       s = sqlString.split(';')
 
+      # loop and insert
       s.each do |sql|
           ActiveRecord::Base.connection.execute(sql)
       end
