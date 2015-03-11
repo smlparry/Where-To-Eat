@@ -1,4 +1,10 @@
 class InsertMenuController < ApplicationController
+  def restaurant
+      if ! params[:restaurant].blank?
+            Restaurant.create(name: params[:restaurant], address: "This address", open_hours: "these open hours", rating: 100, uri: "this")
+      end
+  end
+
   def category
       if ! params[:restaurant_id].blank?
           @default = params[:restaurant_id]
@@ -6,9 +12,6 @@ class InsertMenuController < ApplicationController
       else
           @default = 1
       end
-  end
-
-  def restaurant
   end
 
   def items

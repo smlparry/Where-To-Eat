@@ -1,2 +1,7 @@
-<h1>InsertMenu#restaurant</h1>
-<p>Find me in app/views/insert_menu/restaurant.html.erb</p>
+<h1>Insert Restaurant</h1>
+<%= form_tag('restaurant') do %>
+    <%= text_field_tag(:restaurant) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<%= link_to('Insert menu items', 'items') %>
