@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   post 'insert_menu/restaurant'
 
-  get 'insert_menu/insert_database'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
