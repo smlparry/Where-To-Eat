@@ -35,7 +35,6 @@ class InsertMenuController < ApplicationController
 
     # cast sql file to string
       sqlString = <<-EOS
-      INSERT INTO restaurants VALUES (1624, 'Old Town', '290 La Trobe Street Melbourne', '', '2015-03-03 10:10:16.482184', '2015-03-03 10:10:16.482184', 66, '/r/71/1884142/restaurant/CBD/Old-Town-Melbourne', -37.8103451, 144.9610614);
       INSERT INTO restaurants VALUES (1625, 'Oldtown White Coffee', '303 Elizabeth St Melbourne', '', '2015-03-03 10:10:16.485200', '2015-03-03 10:10:16.485200', NULL, '/r/71/1896552/restaurant/CBD/Oldtown-White-Coffee-Melbourne', -37.8114881, 144.9618089);
       INSERT INTO restaurants VALUES (1626, 'Onni Cafe', '472 Lt Lonsdale St Melbourne', 'M T W T F S S   Breakfast               Lunch               Dinner          Late', '2015-03-03 10:10:16.488326', '2015-03-03 10:10:16.488326', 100, '/r/71/1623055/restaurant/CBD/Onni-Cafe-Melbourne', -37.8131252, 144.955508);
       INSERT INTO restaurants VALUES (1627, 'Pasar Malam', 'Various Melbourne', '', '2015-03-03 10:11:49.872145', '2015-03-03 10:11:49.872145', NULL, '/r/71/1938172/restaurant/CBD/Pasar-Malam-Melbourne', 1.0, 1.0);
