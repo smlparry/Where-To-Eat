@@ -22,7 +22,7 @@ class ApiController < ApplicationController
               if Search.rank(price, location).blank?
                  format.json { render :json => Respond.no_results }
               else
-                  format.json { render :json => Search.rank(price, location) }
+                  format.json { render :json => Search.rank(price, location), :callback => params['callback'] }
               end
           end
       end
