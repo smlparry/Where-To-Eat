@@ -47,6 +47,12 @@ class Search
         # Sort in reverse order cause best fit is largest number
         result = @final_results.sort.reverse!
 
+        @test_results = []
+
+        result.each do |result|
+            result.shift
+        end
+
         # Add a option that says the default location was used
         if long_lat == [-37.81361110,144.96305559]
             result.unshift(message: "Results are being shown from Melbourne CBD")
