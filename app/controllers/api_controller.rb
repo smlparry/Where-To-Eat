@@ -1,5 +1,6 @@
 class ApiController < ApplicationController
   def rank
+    skip_before_action :verify_authenticity_token
     #   Location in longitude latitude as an array i.e [-37.81361110,144.96305559]
       location = params[:location]
 
