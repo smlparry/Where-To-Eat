@@ -3,9 +3,10 @@ class Search
 
         location = Location.new
         # Find within price range
-        items = Item.includes(:restaurant).where("price < ?", price)
+        items = Item.includes(:restaurant).includes(:category).where("price < ?", price)
         @results = Hash.new
         @restaurant_items = Hash.new
+        @all_categories = Hash.new
 
         # Get distance from starting point
         items.each do |item|
@@ -17,9 +18,14 @@ class Search
                 # Append the new item to the existing array of items
                 @restaurant_items[item.restaurant.id] << item
             end
-            @results[location.distance(long_lat[0], long_lat[1], item.restaurant.latitude, item.restaurant.longitude)] = { restaurant: item.restaurant, items: @restaurant_items[item.restaurant.id] }
-        end
 
+            # Create an array of categories
+            if @all_categories[item.category.id].blank?
+                @all_categories[item.category.id] = item.category.category
+            end
+
+            @results[location.distance(long_lat[0], long_lat[1], item.restaurant.latitude, item.restaurant.longitude)] = { restaurant: item.restaurant, items: @restaurant_items[item.restaurant.id]}
+        end
         # Sort by proximity
         # Only take the closest 100 restuarants (should be enough)
         @top_hundred = @results.sort.take(100)
@@ -47,17 +53,20 @@ class Search
         # Sort in reverse order cause best fit is largest number
         result = @final_results.sort.reverse!
 
-        @test_results = []
-
+        # Remove the ranking from the final result array
         result.each do |result|
             result.shift
         end
+
+        # Add the categories array to the end of the response
+        result.push(categories: @all_categories)
 
         # Add a option that says the default location was used
         if long_lat == [-37.81361110,144.96305559]
             result.unshift(message: "Results are being shown from Melbourne CBD")
         end
 
+        # Respond with a max of 50 results
         result.take(50)
 
     end
