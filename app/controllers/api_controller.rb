@@ -2,14 +2,20 @@ class ApiController < ApplicationController
     skip_before_action :verify_authenticity_token
 
   def rank
-    #   Location in longitude latitude as an array i.e [-37.81361110,144.96305559]
-      location = params[:location]
+    #   Get the longitude and latitude
+      lat = params[:lat]
+      lng = params[:lng]
+
 
     #   If the location was not specifed default to melborne CBD
     #   If this value is updated be sure to update the if block in Search.rank
-      if location.blank?
-              location = [-37.81361110,144.96305559]
+      if lat.blank?
+          location = [-37.81361110,144.96305559]
+      else
+        #   else use the current lat and lng
+          location = [lat, lng]
       end
+
 
     #   Price in cents!
       price = params[:price]
