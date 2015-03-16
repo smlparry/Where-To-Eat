@@ -3,7 +3,7 @@ class Search
 
         location = Location.new
         # Find within price range
-        items = Item.includes(:restaurant).includes(:category).where("price < ?", price)
+        items = Item.includes(:restaurant).includes(:category).where("price <= ?", price)
         @results = Hash.new
         @restaurant_items = Hash.new
         @all_categories = Hash.new
