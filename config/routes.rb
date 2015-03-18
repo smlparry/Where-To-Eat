@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-    root 'api#test'
+  root 'pages_controller#index'
+
   get 'api/rank'
 
   get 'api/test'
