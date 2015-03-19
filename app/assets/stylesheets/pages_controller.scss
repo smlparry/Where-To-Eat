@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
 
 body,html {
     height: 100vh;
@@ -13,15 +13,22 @@ body,html {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83e14', endColorstr='#d67259',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     margin: 0;
 }
+.container {
+    margin:0 auto;
+    max-width: 1500px;
+}
 
 .landing {
     height: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
       display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
       display: -ms-flexbox;      /* TWEENER - IE 10 */
       display: -webkit-flex;     /* NEW - Chrome */
       display: flex;
+      @media screen and (max-width: 760px) {
+        display: block;
+      }
     .left {
         -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
           -moz-box-flex: 1;         /* OLD - Firefox 19- */
@@ -30,16 +37,85 @@ body,html {
           -ms-flex: 1;              /* IE 10 */
           flex: 1;
         width: 60%;
-        .logo {
-            text-align:center;
+
+        @media screen and (max-width: 760px){
+            width: 100%;
+        }
+        .horizontal-logo {
+            padding-top: 10%;
+            padding-left: 5%;
+            @media screen and (min-width: 1500px){
+                padding-top: 20%;
+            }
+            @media screen and (min-width: 1280px){
+                padding-top: 4%;
+            }
+            @media screen and (max-width: 1190px){
+                padding-top: 15%;
+            }
+            @media screen and (max-width: 1050px) {
+                padding-top: 14%;
+            }
+            @media screen and (max-width: 760px) {
+                display: none;
+            }
             img {
-                height: 150px;
+                width: 400px;
+
+            }
+        }
+        .vertical-logo {
+            display:none;
+            @media screen and (max-width: 760px) {
+                display:block;
+                max-height: 180px;
+            }
+            text-align:center;
+            padding-top: 5%;
+            img {
+                max-height: 200px;
             }
         }
         .description {
-            padding: 5%;
+            padding: 8% 6%;
             color: white;
-            font-size: 3.5em;
+            font-weight: 300;
+            font-size: 1.5em;
+            @media screen and (min-width: 1280px){
+                padding-top: 5%;
+            }
+            @media screen and (max-width: 1190px){
+                padding-top: 5%;
+            }
+            @media screen and (max-width: 1050px) {
+                font-size: 1.2em;
+            }
+            @media screen and (max-width: 485px) {
+                padding-top: 8%;
+                font-size: 1.1em;
+            }
+
+            .tagline {
+                color: white;
+                font-size: 3em;
+                font-weight:400;
+            }
+            .buttons {
+                padding-top: 10%;
+                padding-left:0%;
+                .cta-button {
+                    text-align: center;
+                    padding: 20px;
+                    border: 2px solid white;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 400;
+                    @media screen and (max-width: 485px) {
+                        display:block;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
         }
     }
 
@@ -49,11 +125,47 @@ body,html {
           -ms-flex-order: 2;              /* TWEENER - IE 10 */
           -webkit-order: 2;               /* NEW - Chrome */
           order: 2;
-        background: #000;
         width: 40%;
 
-        .landing-image {
+        @media screen and (max-width: 760px) {
+            width: 100%;
+            display: block;
+        }
 
+        .landing-image {
+            position: fixed;
+            bottom: 0px;
+            height: 92%;
+            @media screen and (min-width: 1280px){
+                width: 35%;
+            }
+            @media screen and (max-width: 1190px){
+                height: 85%;
+            }
+            @media screen and (max-width: 1100px){
+                height: 80%;
+            }
+            @media screen and (max-width: 1050px){
+                height: 90%;
+                width: 41%;
+            }
+            @media screen and (max-width: 760px){
+                position: relative;
+                width: 100%;
+            }
+            img {
+                padding-left: 15%;
+                width:75%;
+                @media screen and (max-width: 1190px){
+                    padding-left: 10%
+                }
+                @media screen and (max-width: 1300px){
+                    width: 82%;
+                }
+                @media screen and (min-width: 1500px){
+                    padding-left: 0%;
+                }
+            }
         }
     }
 
