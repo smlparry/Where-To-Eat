@@ -45,10 +45,10 @@ body,html {
             padding-top: 10%;
             padding-left: 5%;
             @media screen and (min-width: 1500px){
-                padding-top: 20%;
+                padding-top: 20% !important;
             }
             @media screen and (min-width: 1280px){
-                padding-top: 4%;
+                padding-top: 9%;
             }
             @media screen and (max-width: 1190px){
                 padding-top: 15%;
@@ -136,9 +136,7 @@ body,html {
             position: fixed;
             bottom: 0px;
             height: 92%;
-            @media screen and (min-width: 1280px){
-                width: 35%;
-            }
+
             @media screen and (max-width: 1190px){
                 height: 85%;
             }
