@@ -35,8 +35,4 @@ class ApiController < ApplicationController
           end
       end
   end
-
-  def test
-      render  'api/rank'
-  end
 end

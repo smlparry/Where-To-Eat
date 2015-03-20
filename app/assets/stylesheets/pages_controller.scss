@@ -1,16 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
-
 body,html {
     height: 100vh;
     background-size: cover;
-    background: rgb(216,62,20); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(216,62,20,1) 0%, rgba(214,114,89,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(216,62,20,1)), color-stop(100%,rgba(214,114,89,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(216,62,20,1) 0%,rgba(214,114,89,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(216,62,20,1) 0%,rgba(214,114,89,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(216,62,20,1) 0%,rgba(214,114,89,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(216,62,20,1) 0%,rgba(214,114,89,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83e14', endColorstr='#d67259',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #D75938;
     margin: 0;
 }
 .container {

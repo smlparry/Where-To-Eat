@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'restaurants/add'
+
   root 'pages_controller#index'
 
-  get 'api/rank'
+  get 'add-restaurant' => 'pages_controller#add_restaurant'
 
-  get 'api/test'
+  get 'api/rank'
 
   get 'insert_menu/category'
 

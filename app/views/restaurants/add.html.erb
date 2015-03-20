@@ -1,0 +1,45 @@
+<div class="add-restaurant">
+    <div class="container">
+        <div class="wrapper">
+            <%= form_tag('add') do %>
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:restaurant_name) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:restaurant_name, @restaurant_name, placeholder: "...") %>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:restaurant_address) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:restaurant_address, @restaurant_address, placeholder: "...") %>
+                    </div>
+
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:contact_email) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:contact_email, @contact_email, placeholder: "...") %>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:contact_name) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:contact_name, @contact_name, placeholder: "...") %>
+                    </div>
+                </div>
+                <%= submit_tag("Submit") %>
+            <% end %>
+        </div>
+    </div>
+</div>
