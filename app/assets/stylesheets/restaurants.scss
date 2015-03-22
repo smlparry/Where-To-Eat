@@ -14,7 +14,6 @@
             border-top: 1px solid #dadada;
             background: #FAFAFA;
             border-radius: 5px;
-            margin: 0px 10px 8px;
             -webkit-box-shadow: 0  1px 0 #dadada;
             -moz-box-shadow: 0 1px 0 #dadada;
             -ms-box-shadow: 0 1px 0 #dadada;
@@ -23,16 +22,26 @@
             form {
                 .label {
                     font-size: 1.3em;
-                    margin: 5px 0;
                 }
                 .input-field {
-                    display:block;
                     input {
-                        padding: 15px;
-                        width: 90%;
+                        padding-top: 3%;
+                        padding-bottom: 3%;
+                        padding-left: 3%;
+                        margin: 5px auto;
+                        width: 97%;
                         font-size: 1.3em;
                     }
-
+                    .submit-button {
+                        margin-top: 5px;
+                        padding: 15px;
+                        display:block;
+                        width: 100%;
+                        background: #27ae60;
+                        border: 1px solid white;
+                        color:white;
+                        font-size: 1.1em;
+                    }
                 }
             }
         }

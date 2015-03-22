@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'restaurants/add'
+  post 'restaurants/add'
 
   root 'pages_controller#index'
 

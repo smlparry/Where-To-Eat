@@ -1,13 +1,14 @@
 <div class="add-restaurant">
     <div class="container">
         <div class="wrapper">
-            <%= form_tag('add') do %>
+            <h1>Add restaurant to Eat Under</h1>
+            <%= form_tag('add', id: "add_restaurant_form") do %>
                 <div class="form-element">
                     <div class="label">
                         <%= label_tag(:restaurant_name) %>
                     </div>
                     <div class="input-field">
-                        <%= text_field_tag(:restaurant_name, @restaurant_name, placeholder: "...") %>
+                        <%= text_field_tag(:restaurant_name, @restaurant_name, placeholder: "...", required: true) %>
                     </div>
                 </div>
 
@@ -16,7 +17,7 @@
                         <%= label_tag(:restaurant_address) %>
                     </div>
                     <div class="input-field">
-                        <%= text_field_tag(:restaurant_address, @restaurant_address, placeholder: "...") %>
+                        <%= text_field_tag(:restaurant_address, @restaurant_address, placeholder: "...", required: true) %>
                     </div>
 
                 </div>
@@ -26,7 +27,7 @@
                         <%= label_tag(:contact_email) %>
                     </div>
                     <div class="input-field">
-                        <%= text_field_tag(:contact_email, @contact_email, placeholder: "...") %>
+                        <%= email_field_tag(:contact_email, @contact_email, placeholder: "...", required: true) %>
                     </div>
                 </div>
 
@@ -35,10 +36,14 @@
                         <%= label_tag(:contact_name) %>
                     </div>
                     <div class="input-field">
-                        <%= text_field_tag(:contact_name, @contact_name, placeholder: "...") %>
+                        <%= text_field_tag(:contact_name, @contact_name, placeholder: "...", required: true) %>
                     </div>
                 </div>
-                <%= submit_tag("Submit") %>
+                <div class="form-element">
+                    <div class="input-field">
+                        <button type="submit" class="submit-button" name="commit">Submit</button>
+                    </div>
+                </div>
             <% end %>
         </div>
     </div>
