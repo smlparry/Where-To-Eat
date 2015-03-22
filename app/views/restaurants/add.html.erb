@@ -39,6 +39,12 @@
                         <%= text_field_tag(:contact_name, @contact_name, placeholder: "...", required: true) %>
                     </div>
                 </div>
+
+                <div class="form-element">
+                    <div class="input-field">
+                        <%= number_field_tag(:amount, 50) %>
+                    </div>
+                </div>
                 <div class="form-element">
                     <div class="input-field">
                         <button type="submit" class="submit-button" name="commit">Submit</button>

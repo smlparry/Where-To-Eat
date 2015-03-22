@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'restaurants/add'
   post 'restaurants/add'
 
+  resources :charges
   root 'pages_controller#index'
 
   get 'add-restaurant' => 'pages_controller#add_restaurant'

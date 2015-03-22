@@ -30,6 +30,7 @@ gem 'nokogiri', '~> 1.6.6.2'
 gem 'server-side-google-maps'
 gem 'geo-distance'
 gem 'faker'
+gem 'stripe'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

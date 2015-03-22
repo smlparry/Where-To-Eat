@@ -1,0 +1,21 @@
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+        <p>
+            Pay for subscription to eat under
+        </p>
+        <p>
+            Amount to charge: $<%= @restaurant.subscription_amount %>
+        </p>
+        <p>
+            Billed monthly
+        </p>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= @restaurant.subscription_amount %>00"></script>
+<% end %>
+<script></script>
