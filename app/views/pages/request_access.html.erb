@@ -1,0 +1,24 @@
+<div class="request">
+    <div class="container">
+        <div class="wrapper">
+            <%= form_tag('mailing_list') do %>
+                <div class="form-element">
+                    <h2>Become a Beta tester for Eat Under</h2>
+                    <div class="label">
+                        <%= label_tag(:email, "Your email address") %>
+                    </div>
+                    <div class="input-field">
+                        <%= email_field_tag(:email, nil, placeholder: "Your email address", required: true) %>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <%= label_tag(:android, "Android") %>
+                    <%= radio_button_tag(:os, "android") %>
+                    <%= label_tag(:iphone, "iPhone") %>
+                    <%= radio_button_tag(:os, "iphone") %>
+                </div>
+                <%= submit_tag(:submit, class: 'submit-button') %>
+            <% end %>
+        </div>
+    </div>
+</div>
