@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   end
 
   def request_access
-
   end
 
   def mailing_list

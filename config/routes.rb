@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-    root 'pages#index'
-    
+  devise_for :admins
+
+  root 'pages#index'
+
   get 'page/index'
 
   get 'page/request'
@@ -18,6 +20,8 @@ Rails.application.routes.draw do
   get 'add-restaurant' => 'pages#add_restaurant'
 
   get 'api/rank'
+
+  get 'admin/restaurants'
 
   get 'insert_menu/category'
 
