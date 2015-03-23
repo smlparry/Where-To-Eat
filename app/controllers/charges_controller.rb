@@ -3,19 +3,18 @@ class ChargesController < ApplicationController
     end
     def create
         # Amount in cents
-          @amount = 500
+          @amount = (params[:charge_amount].to_i * 0.01).floor
+          plan = @amount.to_s + '_plan'
+          description = "Name: " + params[:contact_name] + ", Restaurant: " + params[:restaurant_name] + ", Restaurant ID: " + params[:restaurant_id]
 
           customer = Stripe::Customer.create(
-            :email => 'example@stripe.com',
-            :card  => params[:stripeToken]
+            :email => params[:stripeEmail],
+            :source => params[:stripeToken],
+            :plan => plan,
+            :description => description
           )
 
-          charge = Stripe::Charge.create(
-            :customer    => customer.id,
-            :amount      => @amount,
-            :description => 'Rails Stripe customer',
-            :currency    => 'usd'
-          )
+          Restaurant.where(id: params[:restaurant_id]).update_all(active: true)
 
         rescue Stripe::CardError => e
           flash[:error] = e.message

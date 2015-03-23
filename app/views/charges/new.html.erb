@@ -12,10 +12,18 @@
         </p>
     </label>
   </article>
+  
+  <input type="hidden" name="restaurant_name" value="<%= @restaurant.name %>">
+  <input type="hidden" name="contact_name" value="<%= @restaurant.contact_name %>">
+  <input type="hidden" name="contact_email" value="<%= @restaurant.contact_email %>">
+  <input type="hidden" name="restaurant_id" value="<%= @restaurant.id %>">
+  <input type="hidden" name="charge_amount" value="<%= @charge_amount %>">
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @restaurant.subscription_amount %>00"></script>
+          data-description="Eat Under Subscription"
+          data-image="https://s3-ap-southeast-2.amazonaws.com/eatunderassets/stripeIcon.png"
+          data-currency="aud"
+          data-email="@restaurant.contact_email"
+          data-amount="<%= @charge_amount %>"></script>
 <% end %>
-<script></script>
