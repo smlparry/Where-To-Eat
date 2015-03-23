@@ -2,8 +2,16 @@
     <div class="container">
         <div class="wrapper">
             <%= form_tag('mailing_list') do %>
+                <h2>Become a Beta tester for Eat Under</h2>
                 <div class="form-element">
-                    <h2>Become a Beta tester for Eat Under</h2>
+                    <div class="label">
+                        <%= label_tag(:name, "Your Name") %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:name, nil, placeholder: "Your name") %>
+                    </div>
+                </div>
+                <div class="form-element">
                     <div class="label">
                         <%= label_tag(:email, "Your email address") %>
                     </div>

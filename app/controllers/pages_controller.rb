@@ -11,6 +11,6 @@ class PagesController < ApplicationController
           render 'pages/request_access'
       end
 
-      Email.create({email: params[:email], os: params[:os]})
+      Email.create({email: params[:email], os: params[:os], name: params[:name]})
   end
 end
