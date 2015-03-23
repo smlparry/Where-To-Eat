@@ -1,21 +1,22 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.container {
-    font-family: "Quicksand", sans-serif;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    .wrapper {
-        padding:20px;
-        border: 1px solid #dadada;
-        border-top: 1px solid #dadada;
-        background: #FAFAFA;
-        border-radius: 5px;
-        -webkit-box-shadow: 0  1px 0 #dadada;
-        -moz-box-shadow: 0 1px 0 #dadada;
-        -ms-box-shadow: 0 1px 0 #dadada;
-        -o-box-shadow: 0 1px 0 #dadada;
-        box-shadow: 0 1px 0 #dadada;
+
+    .container {
+        font-family: "Quicksand", sans-serif;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        .wrapper {
+            padding:20px;
+            border: 1px solid #dadada;
+            border-top: 1px solid #dadada;
+            background: #FAFAFA;
+            border-radius: 5px;
+            -webkit-box-shadow: 0  1px 0 #dadada;
+            -moz-box-shadow: 0 1px 0 #dadada;
+            -ms-box-shadow: 0 1px 0 #dadada;
+            -o-box-shadow: 0 1px 0 #dadada;
+            box-shadow: 0 1px 0 #dadada;
+        }
     }
-}

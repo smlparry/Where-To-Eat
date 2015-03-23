@@ -29,7 +29,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'nokogiri', '~> 1.6.6.2'
 gem 'server-side-google-maps'
 gem 'geo-distance'
-gem 'faker'
 gem 'stripe'
 
 # Use ActiveModel has_secure_password
