@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
     def new
     end
     def create
+        begin
         # Amount in cents
           @amount = (params[:charge_amount].to_i * 0.01).floor
           plan = @amount.to_s + '_plan'
@@ -19,6 +20,7 @@ class ChargesController < ApplicationController
         rescue Stripe::CardError => e
           flash[:error] = e.message
           redirect_to charges_path
+        end
     end
 
     def show
