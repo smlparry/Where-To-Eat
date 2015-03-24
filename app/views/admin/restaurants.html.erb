@@ -18,6 +18,9 @@
                     <td>
                         <b>Has Items?</b>
                     </td>
+                    <td>
+                        <b>Subscription Amount ($)</b>
+                    </td>
 
                 </tr>
             <% @restaurants.each do |restaurant| %>
@@ -25,6 +28,7 @@
                     <td>
                         <a href="#" data-id="<%= restaurant.id %>" class="delete">Delete</a>
                         <a href="restaurants/edit/<%= restaurant.id %>">Edit</a>
+                        <a href="restaurants/items/<%= restaurant.id %>">Items</a>
                     </td>
                     <td>
                         <%= restaurant.name %>
@@ -37,6 +41,9 @@
                     </td>
                     <td>
                         <%= restaurant.has_items %>
+                    </td>
+                    <td>
+                        <%= restaurant.subscription_amount %>
                     </td>
                 </tr>
             <% end %>

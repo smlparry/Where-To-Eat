@@ -1,0 +1,38 @@
+<div class="admin">
+    <div class="container">
+        <div class="wrapper">
+            <table>
+                <tr>
+                    <td>
+                        Actions:
+                    </td>
+                    <td>
+                        <b>Name</b>
+                    </td>
+                    <td>
+                        <b>Email</b>
+                    </td>
+                    <td>
+                        <b>OS</b>
+                    </td>
+
+                </tr>
+                <% @beta_users.each do |user| %>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.os %>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</div>

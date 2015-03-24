@@ -1,0 +1,34 @@
+<div class="admin">
+    <div class="container">
+        <div class="wrapper">
+            <table>
+                <tr>
+                    <td>
+                        <b>Name</b>
+                    </td>
+                    <td>
+                        <b>Price</b>
+                    </td>
+                    <td>
+                        <b>Category</b>
+                    </td>
+
+                </tr>
+            <% @items.each do |item| %>
+                <tr>
+                    <td>
+                        <%= item.item %>
+                    </td>
+                    <td>
+                        <%= item.price %>
+                    </td>
+                    <td>
+                        <%= Category.find(item.category_id).category %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+        </div>
+    </div>
+
+</div>

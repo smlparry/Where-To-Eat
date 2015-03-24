@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+    #### TOOOOO DOOOOOOO ######
+    ## MAKE ROUTES RESTFUL ##
+    # Not currently done cause im lazy and in a rush
   devise_for :admins
 
   root 'pages#index'
@@ -23,7 +26,9 @@ Rails.application.routes.draw do
 
   get 'admin/restaurants'
   get 'admin/restaurants/delete/:id' => 'admin#delete_restaurant'
-  
+  get 'admin/restaurants/items/:id' => 'admin#restaurant_items'
+  get 'admin/beta'
+
   get 'insert_menu/category'
 
   get 'insert_menu/restaurant'

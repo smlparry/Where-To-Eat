@@ -4,6 +4,12 @@
 .admin {
     table {
         font-family: "Lato", sans-serif;
+        tr {
+            background: #eeeeee;
+            td {
+                padding: 15px;
+            }
+        }
     }
 
 }

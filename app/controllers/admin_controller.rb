@@ -8,4 +8,12 @@ class AdminController < ApplicationController
         id = params[:id]
         Restaurant.find( id ).destroy
     end
+
+    def restaurant_items
+        @items = Item.where(restaurant_id: params[:id]).all()
+    end
+
+    def beta
+        @beta_users = Email.all().order('created_at DESC')
+    end
 end
