@@ -25,7 +25,7 @@
                   data-description="Eat Under Subscription"
                   data-image="https://s3-ap-southeast-2.amazonaws.com/eatunderassets/stripeIcon.png"
                   data-currency="aud"
-                  data-email="@restaurant.contact_email"
+                  data-email="<%= @restaurant.contact_email %>"
                   data-amount="<%= @charge_amount %>"></script>
         <% end %>
     </div>
