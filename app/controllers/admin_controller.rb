@@ -3,4 +3,9 @@ class AdminController < ApplicationController
     def restaurants
         @restaurants = Restaurant.all().order('created_at DESC')
     end
+
+    def delete_restaurant
+        id = params[:id]
+        Restaurant.find( id ).destroy
+    end
 end

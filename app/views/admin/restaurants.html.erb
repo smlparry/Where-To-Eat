@@ -23,7 +23,7 @@
             <% @restaurants.each do |restaurant| %>
                 <tr>
                     <td>
-                        <a href="#" data-id="<%= restaurant.id %>" id="delete">Delete</a>
+                        <a href="#" data-id="<%= restaurant.id %>" class="delete">Delete</a>
                         <a href="restaurants/edit/<%= restaurant.id %>">Edit</a>
                     </td>
                     <td>
@@ -48,7 +48,7 @@
 
 <script charset="utf-8">
 $(document).ready(function () {
-    $("#delete").on('click', function(event) {
+    $(".delete").click( function(event) {
         var restaurantId = event.currentTarget.dataset.id;
         if ( confirm("Are you sure you want to delete this restaurant?") ){
             window.location.href = 'restaurants/delete/' + restaurantId ;

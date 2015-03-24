@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get 'api/rank'
 
   get 'admin/restaurants'
-
+  get 'admin/restaurants/delete/:id' => 'admin#delete_restaurant'
+  
   get 'insert_menu/category'
 
   get 'insert_menu/restaurant'
