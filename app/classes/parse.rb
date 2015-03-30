@@ -3,6 +3,9 @@ require 'open-uri'
 
 # This class parses the html from the input url
 class Parse
+    def self.test
+        p "hey ther"
+    end
 
     # Finds the median price for set of data
     # Primarily used for the search algorithm to find the median item price
