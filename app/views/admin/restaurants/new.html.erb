@@ -2,7 +2,7 @@
     <div class="container">
         <div class="wrapper">
             <h1>Add restaurant to Eat Under</h1>
-            <%= form_tag('add', id: "add_restaurant_form") do %>
+                <%= form_tag({action: 'create'}, id: "add_restaurant_form") do %>
                 <div class="form-element">
                     <div class="label">
                         <%= label_tag(:restaurant_name) %>
