@@ -46,6 +46,7 @@ class Search
             # Run the ranking calculation
             # See the Parse.rank method for further explaination
             ranking = Parse.rank(rating, items.count, proximity, median)
+            
             # Can now sort most revelant by the key of the hash
             @final_results[ranking] = {restaurant: restaurant.name, items: items, distance: proximity, rating: rating, median: median, longitude: restaurant.longitude, latitude: restaurant.latitude}
 

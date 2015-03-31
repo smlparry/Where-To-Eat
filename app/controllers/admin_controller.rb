@@ -6,7 +6,7 @@ class AdminController < ApplicationController
 
     def delete_restaurant
         id = params[:id]
-        Restaurant.find( id ).destroy
+        Restaurant.find(id).destroy
     end
 
     def restaurant_items

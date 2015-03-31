@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323101209) do
+ActiveRecord::Schema.define(version: 20150331064427) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150323101209) do
     t.string   "contact_name"
     t.boolean  "active"
     t.integer  "subscription_amount"
+    t.string   "cuisine"
   end
 
 end

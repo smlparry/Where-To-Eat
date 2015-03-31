@@ -1,1 +1,58 @@
-edit.html.erb
+<div class="add-restaurant">
+    <div class="container">
+        <div class="wrapper">
+            <h1>Edit '<%= @restaurant.name %>'</h1>
+                <%= form_tag(admin_restaurant_path(id: @restaurant.id), method: 'patch', id: "add_restaurant_form") do %>
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:restaurant_name) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:restaurant_name, @restaurant.name, placeholder: "...", required: true) %>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:restaurant_address) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:restaurant_address, @restaurant.address, placeholder: "...", required: true) %>
+                    </div>
+
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:contact_email) %>
+                    </div>
+                    <div class="input-field">
+                        <%= email_field_tag(:contact_email, @restaurant.contact_email, placeholder: "...", required: true) %>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:contact_name) %>
+                    </div>
+                    <div class="input-field">
+                        <%= text_field_tag(:contact_name, @restaurant.contact_name, placeholder: "...", required: true) %>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <div class="label">
+                        <%= label_tag(:has_items) %>
+                    </div>
+                    <div class="input-field">
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="input-field">
+                        <button type="submit" class="submit-button" name="commit">Update</button>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

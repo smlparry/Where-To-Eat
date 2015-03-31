@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   devise_for :admins
 
   # Restful routes
-  namespace :admin do 
+  namespace :admin do   
     resources :restaurants
+    resources :items
   end
 
   resources :charges

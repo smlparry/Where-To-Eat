@@ -26,8 +26,8 @@
             <% @restaurants.each do |restaurant| %>
                 <tr>
                     <td>
-                     <%= link_to "Delete this page", { :action => "destroy", :id => restaurant.id }, :confirm => "Are you sure?" %>
-                        <a href="restaurants/edit/<%= restaurant.id %>">Edit</a>
+                    <%= button_to "Delete", admin_restaurant_path({ id: restaurant.id}), :method => :delete , data: {:confirm => "Are you sure?"} %>
+                    <%= link_to "Edit", edit_admin_restaurant_path(restaurant.id) %>
                         <a href="restaurants/items/<%= restaurant.id %>">Items</a>
                     </td>
                     <td>

@@ -15,10 +15,11 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def index
-    @restaurants = Restaurant.all()
+    @restaurants = Restaurant.all().order('updated_at DESC')
   end
 
   def new
@@ -28,5 +29,16 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def destroy
+    Restaurant.find(params[:id]).destroy
+  end
+
+  def update
+    r = Restaurant.find(params[:id])
+    r.name = params[:restaurant_name]
+    r.address = params[:restaurant_address]
+    r.contact_email = params[:contact_email]
+    r.contact_name = params[:contact_name]
+    r.save
+
   end
 end
